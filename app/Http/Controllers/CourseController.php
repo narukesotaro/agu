@@ -11,4 +11,9 @@ class CourseController extends Controller
     {
         return view('courses/index')->with(['courses' => $course->getPaginateByLimit()]);
     }
+    
+    public function show(Course $course)
+    {
+        return view('courses/show')->with(['course' => $course]);
+    }
 }
