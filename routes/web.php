@@ -14,3 +14,5 @@ use App\Http\Controllers\CourseController;
 |
 */
 Route::get('/', [CourseController::class, 'index']);
+
+Route::get('/courses/{course}', [CourseController::class ,'show']);
