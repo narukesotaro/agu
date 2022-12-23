@@ -13,9 +13,4 @@ use App\Http\Controllers\CourseController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/courses', [CourseController::class, 'index']);
+Route::get('/', [CourseController::class, 'index']);
