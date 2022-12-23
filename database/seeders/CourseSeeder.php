@@ -17,8 +17,8 @@ class CourseSeeder extends Seeder
     public function run()
     {
         DB::table('courses')->insert([
-                'group' => 'A',
                 'name' => 'statisticsI',
+                'group' => 'A',
                 'semester' => 'previous',
                 'week' => 'monday',
                 'period' => '5',

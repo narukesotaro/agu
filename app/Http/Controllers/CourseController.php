@@ -9,6 +9,6 @@ class CourseController extends Controller
 {
     public function index(Course $course)
     {
-        return $course->get();
+        return view('courses/index')->with(['courses' => $course->getPaginateByLimit()]);
     }
 }
