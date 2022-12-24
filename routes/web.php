@@ -15,4 +15,8 @@ use App\Http\Controllers\CourseController;
 */
 Route::get('/', [CourseController::class, 'index']);
 
+Route::get('/courses/create', [CourseController::class, 'create']);
+
 Route::get('/courses/{course}', [CourseController::class ,'show']);
+
+Route::post('/courses', [CourseController::class, 'store']);
