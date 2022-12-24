@@ -28,4 +28,17 @@ class CourseController extends Controller
         $course->fill($input)->save();
         return redirect('/courses/' . $course->id);
     }
+    
+    public function edit(Course $course)
+    {
+    return view('courses/edit')->with(['course' => $course]);
+    }
+    
+    public function update(CourseRequest $request, Course $course)
+    {
+    $input_course = $request['course'];
+    $course->fill($input_course)->save();
+
+    return redirect('/courses/' . $course->id);
+    }
 }
