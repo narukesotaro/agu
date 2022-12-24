@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Course Name</h1>
+        <a href='/courses/create'>create</a>
         <div class='courses'>
             @foreach ($courses as $course)
             <div class='course'>

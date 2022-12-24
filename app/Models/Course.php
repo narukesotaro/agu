@@ -13,4 +13,22 @@ class Course extends Model
     {
         return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
+    
+    protected $fillable = [
+        'name',
+        'group',
+        'semester',
+        'week',
+        'period',
+        'teacher',
+        'online_or_offline',
+        'how_to_valuate',
+        'attendance',
+        'text',
+        'homework',
+        'test_type',
+        'has_report',
+        'has_presentation',
+        'image_path',
+    ];
 }
