@@ -10,6 +10,7 @@
         <h1 class='name'>
             {{ $course->name }}
         </h1>
+        <div class="edit"><a href="/courses/{{ $course->id }}/edit">edit</a></div>
         <div class='content'>
             <div class="content_course">
                 <p class='group'>{{ $course->group }}</p>
