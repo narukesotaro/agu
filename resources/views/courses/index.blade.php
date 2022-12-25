@@ -28,11 +28,25 @@
                 <p class='has_report'>{{ $course->has_report }}</p>
                 <p class='has_presentation'>{{ $course->has_presentation }}</p>
                 <p class='image_path'>{{ $course->image_path }}</p>
+                <form action="/courses/{{ $course->id }}" id="form_{{ $course->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" onclick="deletePost({{ $course->id }})">delete</button> 
+                </form>
             </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $courses->links() }}
         </div>
+        <script>
+        function deletePost(id) {
+            'use strict'
+
+             if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+             document.getElementById(`form_${id}`).submit();
+             }
+          }
+       </script>
     </body>
 </html>

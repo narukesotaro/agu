@@ -41,4 +41,10 @@ class CourseController extends Controller
 
     return redirect('/courses/' . $course->id);
     }
+    
+    public function delete(Course $course)
+    {
+    $course->delete();
+    return redirect('/');
+    }
 }
