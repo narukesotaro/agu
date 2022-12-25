@@ -19,3 +19,4 @@ Route::get('/courses/{course}', [CourseController::class ,'show']);
 Route::post('/courses', [CourseController::class, 'store']);
 Route::get('/courses/{course}/edit', [CourseController::class, 'edit']);
 Route::put('/courses/{course}', [CourseController::class, 'update']);
+Route::delete('/courses/{course}', [CourseController::class,'delete']);
