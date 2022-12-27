@@ -27,8 +27,8 @@ return new class extends Migration
             $table->string('text');
             $table->string('homework');
             $table->string('test_type');
-            $table->boolean('has_report');
-            $table->boolean('has_presentation');
+            $table->string('has_report');
+            $table->string('has_presentation');
             $table->string('image_path');
             $table->timestamps();
             $table->softDeletes();
