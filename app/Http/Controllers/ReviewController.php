@@ -11,4 +11,16 @@ class ReviewController extends Controller
     {
         return view('reviews/index')->with(['reviews' => $review->getPaginateByLimit()]);
     }
+    
+    public function create()
+    {
+        return view('reviews/create');
+    }
+    
+    public function store(Review $review, ReviewRequest $request)
+    {
+        $input = $request['review'];
+        $review->fill($input)->save();
+        return redirect('/reviews/' . $review->id);
+    }
 }
