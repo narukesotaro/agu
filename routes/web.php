@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 
@@ -13,10 +14,30 @@ use App\Http\Controllers\CourseController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [CourseController::class, 'index']);
-Route::get('/courses/create', [CourseController::class, 'create']);
-Route::get('/courses/{course}', [CourseController::class ,'show']);
-Route::post('/courses', [CourseController::class, 'store']);
-Route::get('/courses/{course}/edit', [CourseController::class, 'edit']);
-Route::put('/courses/{course}', [CourseController::class, 'update']);
-Route::delete('/courses/{course}', [CourseController::class,'delete']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::controller(CourseController::class)->middleware(['auth'])->group(function(){
+    Route::get('/', 'index')->name('index');
+    Route::post('/courses', 'store')->name('store');
+    Route::get('/courses/create', 'create')->name('create');
+    Route::get('/courses/{course}', 'show')->name('show');
+    Route::put('/courses/{course}', 'update')->name('update');
+    Route::delete('/courses/{course}', 'delete')->name('delete');
+    Route::get('/courses/{course}/edit', 'edit')->name('edit');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('/', [CourseController::class, 'index'])->name('index')->middleware('auth');
+
+require __DIR__.'/auth.php';

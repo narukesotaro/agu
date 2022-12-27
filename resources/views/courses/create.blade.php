@@ -3,6 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Course</title>
+        <x-app-layout>
+    　　 <x-slot name="header">
+           授業投稿
+         </x-slot>
     </head>
     <body>
         <h1>Course Name</h1>
@@ -81,4 +85,5 @@
             <a href="/">戻る</a>
         </div>
     </body>
+  </x-app-layout>
 </html>
