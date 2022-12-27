@@ -5,6 +5,10 @@
         <title>Course</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <x-app-layout>
+            <x-slot name="show">
+             授業詳細
+            </x-slot>
     </head>
     <body>
         <h1 class='name'>
@@ -34,3 +38,4 @@
         </div>
     </body>
 </html>
+</x-app-layout>

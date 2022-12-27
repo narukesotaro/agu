@@ -1,3 +1,7 @@
+<x-app-layout>
+    <x-slot name="edit">
+        授業編集
+    </x-slot>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -76,3 +80,4 @@
             <a href="/courses/{{ $course->id }}">戻る</a>
     </div>
 </body>
+</x-app-layout>

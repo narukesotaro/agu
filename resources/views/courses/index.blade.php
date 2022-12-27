@@ -5,6 +5,10 @@
         <title>Course</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <x-app-layout>
+   　　 <x-slot name="header">
+        授業一覧
+       </x-slot>
     </head>
     <body>
         <h1>Course Name</h1>
@@ -48,5 +52,7 @@
              }
           }
        </script>
+       {{ Auth::user()->name }}
     </body>
+    </x-app-layout>
 </html>
