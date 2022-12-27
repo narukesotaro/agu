@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('about_credit');
+            $table->string('body');
             $table->foreignId('user_id')->constrained();
-            $table->string('rating');
             $table->foreignId('course_id')->constrained();  
             $table->timestamps();
             $table->softDeletes();
