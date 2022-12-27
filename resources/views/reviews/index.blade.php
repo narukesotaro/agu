@@ -9,6 +9,7 @@
     <body>
         <h1>Review</h1>
         <div class='reviews'>
+        <a href='/reviews/create'>create</a>
             @foreach ($reviews as $review)
                 <div class='review'>
                     <h2 class='title'>{{ $review->title }}</h2>
