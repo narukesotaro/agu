@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', [CourseController::class, 'index'])->name('index')->middleware('auth');
+Route::get('/reviews', [ReviewController::class, 'index']);
 
 require __DIR__.'/auth.php';
+
+

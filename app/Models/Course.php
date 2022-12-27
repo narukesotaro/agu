@@ -33,4 +33,9 @@ class Course extends Model
         'has_presentation',
         'image_path',
     ];
+    
+    public function reviews()
+    {
+        return $this->hasMany(Course::class);
+    }
 }
