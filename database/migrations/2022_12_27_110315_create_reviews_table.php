@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('body');
             $table->foreignId('user_id')->constrained();
+            $table->integer('rating');
             $table->foreignId('course_id')->constrained();  
             $table->timestamps();
             $table->softDeletes();

@@ -36,15 +36,15 @@ class CourseController extends Controller
     
     public function update(CourseRequest $request, Course $course)
     {
-       $input_course = $request['course'];
-       $course->fill($input_course)->save();
+        $input_course = $request['course'];
+        $course->fill($input_course)->save();
 
-       return redirect('/courses/' . $course->id);
+        return redirect('/courses/' . $course->id);
     }
     
     public function delete(Course $course)
     {
-       $course->delete();
-       return redirect('/');
+        $course->delete();
+        return redirect('/');
     }
 }

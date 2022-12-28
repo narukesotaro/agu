@@ -39,10 +39,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/', [CourseController::class, 'index'])->name('index')->middleware('auth');
-Route::get('/reviews', [ReviewController::class, 'index']);
-Route::get('/reviews/create', [ReviewController::class, 'create']);
-Route::post('/reviews', [ReviewController::class, 'store']);
 require __DIR__.'/auth.php';
+
+Route::get('/reviews', [ReviewController::class, 'index']);
+Route::post('/reviews', [ReviewController::class, 'store']);
+Route::get('/reviews/create', [ReviewController::class, 'create']);
+Route::get('/reviews/{review}', [ReviewController::class ,'show']);
+Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
+Route::put('/reviews/{review}', [ReviewController::class, 'update']);
+Route::delete('/review/{review}', [ReviewController::class,'delete']);
+
+
 
 
