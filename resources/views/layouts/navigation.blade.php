@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('授業一覧') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('show')" :active="request()->routeIs('show')">
+                        {{ __('授業詳細') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
                         {{ __('授業投稿') }}
                     </x-nav-link>

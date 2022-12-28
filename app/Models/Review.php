@@ -20,7 +20,10 @@ class Review extends Model
     }
     
     protected $fillable = [
-    'title',
-    'body',
+        'title',
+        'body',
+        'user_id',
+        'rating',
+        'course_id',
     ]; 
 }
